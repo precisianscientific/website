@@ -109,6 +109,8 @@ repository-root/
 
 ## ⚡ Performance Optimization
 
+- **Image Compression**: All images in the /assets folder have been compressed to ensure fast load times without sacrificing quality.
+
 ### Image Optimization (Optional)
 
 For optimal performance, consider compressing large images:
@@ -145,6 +147,9 @@ The website is configured for the domain `precisianscientific.in`:
 - Monitor both GitHub Pages and custom domain URLs
 
 ## 🐛 Troubleshooting
+
+**File Deletion Errors**
+- If you have trouble deleting files locally using PowerShell due to permissions, use the `-Force` flag. For example: `Remove-Item -Path '.\unwanted-file.txt' -Force`.
 
 ### Common Issues:
 

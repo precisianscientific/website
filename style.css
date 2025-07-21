@@ -63,19 +63,30 @@ body {
   border-color: var(--primary-blue-dark) !important;
 }
 
-/* Header */
+/* Header and Navigation */
 .site-header {
-  background: var(--surface);
   position: fixed;
-  width: 100%;
   top: 0;
-  z-index: 100;
+  left: 0;
+  right: 0;
+  background: var(--surface);
   box-shadow: var(--elevation-1);
+  z-index: 1000;
 }
 
 .site-header .container {
   height: 80px;
   padding: 0 var(--spacing-3);
+}
+
+.navbar {
+  height: 100%;
+}
+
+.navbar-brand {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-right: 1rem;
 }
 
 .logo {
@@ -84,7 +95,6 @@ body {
   width: auto;
   display: block;
   object-fit: contain;
-  margin-right: 1rem;
   transition: transform 0.2s ease;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
@@ -94,32 +104,31 @@ body {
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
 }
 
-/* Logo container styling */
-.site-header .col-auto {
-  display: flex;
-  align-items: center;
-  padding-right: var(--spacing-3);
-}
-
-/* Navigation */
-.site-header .nav-link {
-  color: var(--on-surface) !important;
-  text-decoration: none;
-  font-weight: 500;
+.navbar-toggler {
+  padding: 0.25rem 0.5rem;
   font-size: 1rem;
-  padding: var(--spacing-1) var(--spacing-2) !important;
-  border-radius: 4px;
-  transition: background-color 0.2s ease;
+  border: 1px solid var(--primary-blue);
+  color: var(--primary-blue);
 }
 
-.site-header .nav-link:hover {
-  background-color: rgba(25, 118, 210, 0.08) !important;
+.navbar-toggler:focus {
+  box-shadow: none;
+  border-color: var(--primary-blue-dark);
+}
+
+.navbar-nav {
+  align-items: center;
+}
+
+.nav-link {
+  color: var(--on-surface) !important;
+  padding: 0.5rem 1rem !important;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
   color: var(--primary-blue) !important;
-}
-
-.site-header .nav-link.active {
-  background-color: var(--primary-blue) !important;
-  color: var(--on-primary) !important;
 }
 
 /* Hero Section */
@@ -148,6 +157,7 @@ body {
   height: 100%;
 }
 
+/* Glassmorphism Effect - DO NOT MODIFY */
 .hero-content {
   background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(12px);
@@ -184,21 +194,79 @@ section:nth-of-type(even) {
 
 /* Products Grid */
 .product-card {
-  background: var(--surface);
-  border-radius: 8px;
-  overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: var(--elevation-1);
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  border: 1px solid #e0e0e0;
+  transition: box-shadow 0.2s, transform 0.2s;
+  padding: 0;
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.product-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  transform: translateY(-2px);
+}
+.product-img-large {
+  height: 200px;
+  width: auto;
+  object-fit: contain;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  border-radius: 0;
+  box-shadow: none;
+}
+.product-content h3 {
+  font-weight: 500;
+  margin-bottom: 0;
+  color: #222;
+}
+.bg-light {
+  background: #fafbfc !important;
 }
 
-.product-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--elevation-2);
+/* Specific override for service cards to adjust height */
+#services .product-card {
+  min-height: auto;
+  padding: 2rem 1rem;
+}
+
+.service-logo {
+  max-height: 50px;
+  margin-bottom: 1rem;
+  object-fit: contain;
+}
+
+.grass-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+  border-radius: 12px;
+}
+
+.product-card .product-content {
+  position: relative;
+  z-index: 1;
 }
 
 .product-img-large {
-  height: 240px;
-  object-fit: cover;
+  height: 200px;
+  width: auto;
+  object-fit: contain;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .product-content {
@@ -207,33 +275,13 @@ section:nth-of-type(even) {
 
 .product-card h3 {
   color: var(--on-surface);
-}
-
-/* Why Choose Us */
-.why-item {
-  background: var(--surface);
-  border-radius: 8px;
-  transition: transform 0.2s ease;
-  box-shadow: var(--elevation-1);
-}
-
-.why-item:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--elevation-2);
-}
-
-.why-icon {
-  min-width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
+  font-weight: 500;
 }
 
 /* Contact Section */
 .contact-link {
   color: var(--on-surface);
+  font-weight: 500;
   transition: transform 0.2s ease, color 0.2s ease;
   padding: var(--spacing-2);
   border-radius: 8px;
@@ -260,13 +308,35 @@ section:nth-of-type(even) {
 }
 
 /* Responsive Design */
+@media (max-width: 991px) {
+  .site-header .container {
+    height: auto;
+    min-height: 64px;
+  }
+  
+  .navbar {
+    padding: 0.5rem 0;
+  }
+  
+  .navbar-collapse {
+    background: var(--surface);
+    padding: 1rem;
+    margin: 0 -1rem;
+    box-shadow: var(--elevation-1);
+  }
+  
+  .navbar-nav {
+    align-items: flex-start;
+  }
+  
+  .nav-link {
+    padding: 0.75rem 0 !important;
+  }
+}
+
 @media (max-width: 768px) {
   .hero-content {
     padding: var(--spacing-4);
-  }
-
-  .site-header .nav {
-    display: none;
   }
 
   .hero {
@@ -287,10 +357,6 @@ section:nth-of-type(even) {
   }
   
   .product-card {
-    margin-bottom: var(--spacing-3);
-  }
-  
-  .why-item {
     margin-bottom: var(--spacing-3);
   }
   
@@ -344,8 +410,15 @@ section:nth-of-type(even) {
 
 /* Product CTA styling */
 .product-cta {
-  color: var(--on-surface);
-  font-weight: 500;
+  font-style: italic;
+  color: #555;
+  margin-top: var(--spacing-4);
+}
+
+@media (max-width: 768px) {
+  .product-img-large {
+    height: 200px;
+  }
 }
 
 /* WhatsApp specific styling */
@@ -355,4 +428,124 @@ section:nth-of-type(even) {
 
 .contact-link:hover .fa-whatsapp {
   color: #128C7E !important;
+} 
+
+.contact-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+  .contact-grid {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+@media (max-width: 767px) {
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    justify-items: center;
+  }
+  .contact-link {
+    font-size: 0.8rem;
+  }
+  .contact-link i {
+    margin-bottom: 0.5rem;
+  }
+} 
+
+/* Photo Gallery Section */
+.gallery-item {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 0.5rem;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 240px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.gallery-item:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  transform: translateY(-2px);
+}
+.gallery-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+@media (max-width: 991px) {
+  .gallery-item {
+    height: 200px;
+  }
+  .gallery-img {
+    height: 180px;
+  }
+}
+@media (max-width: 576px) {
+  .gallery-item {
+    height: 160px;
+  }
+  .gallery-img {
+    height: 140px;
+  }
+}
+
+/* Why Choose Us Card Grid */
+.why-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  border: 1px solid #eee;
+  font-size: 1.1rem;
+  font-weight: 500;
+  min-height: 72px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.why-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  transform: translateY(-2px);
+}
+.why-icon {
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 991px) {
+  .why-card {
+    font-size: 1rem;
+    padding: 1.25rem;
+  }
+} 
+
+/* Contact Button Styling */
+.nav-item .btn-primary.nav-link {
+  color: #fff !important;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
+}
+
+.nav-item .btn-primary.nav-link:hover {
+  background-color: var(--primary-blue-dark) !important;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 991px) {
+  .nav-item .btn-primary.nav-link {
+    margin: 0.5rem 0;
+    text-align: center;
+    padding: 0.75rem !important;
+  }
+  
+  .navbar-nav .nav-item.ms-lg-3 {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
 } 
