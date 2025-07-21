@@ -70,7 +70,7 @@ body {
   left: 0;
   right: 0;
   background: var(--surface);
-  box-shadow: var(--elevation-1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);  /* Enhanced from elevation-1 */
   z-index: 1000;
 }
 
@@ -425,64 +425,15 @@ section:nth-of-type(even) {
 
 .contact-grid {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
 }
 @media (max-width: 991px) {
   .contact-grid {
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 1.25rem !important;
-    display: flex !important;
-  }
-  .contact-link {
-    width: 100% !important;
-    max-width: 400px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: center !important;
-    text-align: center !important;
-    font-size: 1rem !important;
-    padding: 0.75rem 0 !important;
-    margin: 0 !important;
-    gap: 0.5rem !important;
-  }
-  .contact-link i, .contact-link .fa-whatsapp {
-    margin-bottom: 0 !important;
-    margin-right: 0.5rem !important;
-    font-size: 1.5rem !important;
-    min-width: 28px;
-    text-align: center;
-  }
-  .contact-link span, .contact-link a {
-    word-break: break-all;
-    overflow-wrap: anywhere;
-    max-width: 100%;
-    display: inline-block;
-    text-align: center !important;
-  }
-  /* Center all cards on small screens */
-  .row.g-4 > [class^="col-"] {
-    flex: 0 0 100%;
-    max-width: 100%;
-    margin-bottom: 1.25rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .product-card, .why-card, #services .product-card {
-    width: 100%;
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 1.5rem;
   }
 }
 @media (max-width: 576px) {
@@ -518,6 +469,11 @@ section:nth-of-type(even) {
   object-fit: cover;
   border-radius: 10px;
   display: block;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+.gallery-item:hover .gallery-img {
+  filter: grayscale(0%);
 }
 @media (max-width: 991px) {
   .gallery-item {
@@ -640,6 +596,7 @@ section:nth-of-type(even) {
 .navbar-links .btn:hover {
   background: var(--primary-blue-dark);
   color: #fff !important;
+  transform: translateY(-2px); /* Add a slight lift on hover */
 }
 .nav-toggle {
   display: none;

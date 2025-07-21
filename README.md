@@ -268,16 +268,3 @@ For business inquiries only, please contact us directly through the website.
 **Built with ❤️ for Precisian Scientific**
 
 *Last updated: January 2025* 
-
-## 🧹 Code Cleanup & Maintenance
-
-To ensure the project remains clean, periodically remove any unnecessary files. If you encounter errors in PowerShell when deleting files (e.g., due to read-only permissions), use the `-Force` parameter.
-
-**Example (PowerShell):**
-```powershell
-# Forcefully remove an unnecessary backup file
-Remove-Item -Path "./assets/backup/old_logo.png" -Force
-
-# Forcefully remove an entire unused directory
-Remove-Item -Path "./temp_designs" -Recurse -Force
-``` 
