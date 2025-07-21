@@ -32,6 +32,8 @@ A modern, responsive website for **Precisian Scientific** - a precision laborato
 - **Flexible Grid**: Bootstrap 5 responsive breakpoints
 - **Touch Friendly**: Proper spacing and touch targets
 
+### 100% Static: No JavaScript or dynamic dependencies. Works on any static host.
+
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -61,20 +63,35 @@ A modern, responsive website for **Precisian Scientific** - a precision laborato
 website/
 ├── index.html              # Main HTML file
 ├── gallery.html            # Photo gallery page
+├── services.html           # Consulting services page
 ├── style.css               # Custom CSS styles
 ├── README.md               # This documentation
+├── DEPLOYMENT.md           # Deployment instructions
+├── LICENSE                 # License and usage restrictions
+├── sitemap.xml             # Sitemap for SEO
+├── robots.txt              # Robots file for SEO
+├── CNAME                   # Custom domain for GitHub Pages
+├── .gitignore              # Git ignore rules
+├── .github/                # GitHub workflows and config
 └── assets/
     ├── logo.png            # Company logo
     ├── background.jpg      # Hero background image
     ├── microscope.jpg      # Product showcase image
     ├── pipette.jpg         # Product showcase image
     ├── centrifuge.jpg      # Product showcase image
+    ├── agmark.png          # AGMARK logo
+    ├── fssai.png           # FSSAI logo
+    ├── nabl.png            # NABL logo
+    ├── grass.png           # Grass overlay for AGMARK
+    ├── photogallery/       # Work gallery images
     └── favicon/            # Favicon and app icons
         ├── favicon.ico
         ├── apple-touch-icon.png
         ├── site.webmanifest
         └── web-app-manifest-*.png
 ```
+
+> **Note:** This site is fully static and does not require or use any JavaScript for layout, navigation, or interactivity. All navigation and layout is pure HTML/CSS and works on any static host (GitHub Pages, Netlify, Vercel, etc).
 
 ## 🎯 Website Sections
 

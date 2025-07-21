@@ -318,13 +318,6 @@ section:nth-of-type(even) {
     padding: 0.5rem 0;
   }
   
-  .navbar-collapse {
-    background: var(--surface);
-    padding: 1rem;
-    margin: 0 -1rem;
-    box-shadow: var(--elevation-1);
-  }
-  
   .navbar-nav {
     align-items: flex-start;
   }
@@ -547,5 +540,128 @@ section:nth-of-type(even) {
   .navbar-nav .nav-item.ms-lg-3 {
     width: 100%;
     margin: 0.5rem 0;
+  }
+} 
+
+/* Pure CSS Responsive Navbar */
+.navbar-static {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  height: 80px;
+}
+.navbar-static .navbar-brand {
+  display: flex;
+  align-items: center;
+}
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.navbar-links li {
+  display: flex;
+  align-items: center;
+}
+.navbar-links a {
+  color: var(--on-surface);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+.navbar-links a:hover,
+.navbar-links a.active {
+  color: var(--primary-blue);
+  background: #eaf2fb;
+}
+.navbar-links .btn {
+  margin-left: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  font-weight: 500;
+  border-radius: 6px;
+  box-shadow: none;
+  background: var(--primary-blue);
+  color: #fff !important;
+  border: none;
+  transition: background 0.2s, color 0.2s;
+}
+.navbar-links .btn:hover {
+  background: var(--primary-blue-dark);
+  color: #fff !important;
+}
+.nav-toggle {
+  display: none;
+}
+.nav-toggle-label {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 1100;
+}
+.nav-toggle-label span,
+.nav-toggle-label span:before,
+.nav-toggle-label span:after {
+  display: block;
+  background: #222;
+  height: 3px;
+  width: 28px;
+  border-radius: 2px;
+  position: absolute;
+  left: 6px;
+  transition: 0.3s;
+}
+.nav-toggle-label span {
+  top: 19px;
+}
+.nav-toggle-label span:before {
+  content: '';
+  top: 10px;
+}
+.nav-toggle-label span:after {
+  content: '';
+  top: 28px;
+}
+@media (max-width: 991px) {
+  .navbar-links {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+    padding: 1rem 0.5rem;
+    display: none;
+    z-index: 1000;
+  }
+  .navbar-links li {
+    width: 100%;
+  }
+  .navbar-links a,
+  .navbar-links .btn {
+    width: 100%;
+    text-align: left;
+    margin: 0.25rem 0;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+  }
+  .nav-toggle:checked + .nav-toggle-label + .navbar-links {
+    display: flex;
+  }
+  .nav-toggle-label {
+    display: block;
   }
 } 
