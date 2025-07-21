@@ -425,27 +425,73 @@ section:nth-of-type(even) {
 
 .contact-grid {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
-@media (min-width: 768px) {
+@media (max-width: 991px) {
   .contact-grid {
-    flex-direction: row;
-    justify-content: center;
-  }
-}
-@media (max-width: 767px) {
-  .contact-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-    justify-items: center;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1.25rem !important;
+    display: flex !important;
   }
   .contact-link {
-    font-size: 0.8rem;
+    width: 100% !important;
+    max-width: 400px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    font-size: 1rem !important;
+    padding: 0.75rem 0 !important;
+    margin: 0 !important;
+    gap: 0.5rem !important;
   }
-  .contact-link i {
-    margin-bottom: 0.5rem;
+  .contact-link i, .contact-link .fa-whatsapp {
+    margin-bottom: 0 !important;
+    margin-right: 0.5rem !important;
+    font-size: 1.5rem !important;
+    min-width: 28px;
+    text-align: center;
+  }
+  .contact-link span, .contact-link a {
+    word-break: break-all;
+    overflow-wrap: anywhere;
+    max-width: 100%;
+    display: inline-block;
+    text-align: center !important;
+  }
+  /* Center all cards on small screens */
+  .row.g-4 > [class^="col-"] {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .product-card, .why-card, #services .product-card {
+    width: 100%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 576px) {
+  .product-card, .why-card, #services .product-card {
+    max-width: 98vw;
+  }
+  .contact-link {
+    max-width: 98vw !important;
+    font-size: 0.97rem !important;
   }
 } 
 
@@ -661,6 +707,51 @@ section:nth-of-type(even) {
   .nav-toggle:checked + .nav-toggle-label + .navbar-links {
     display: flex;
   }
+  .nav-toggle-label {
+    display: block;
+  }
+} 
+
+/* Hamburger menu icon fix */
+.nav-toggle-label {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 1100;
+}
+.nav-toggle-label span {
+  display: block;
+  position: relative;
+  width: 28px;
+  height: 3px;
+  background: #222;
+  border-radius: 2px;
+  margin: 0 auto;
+  transition: background 0.3s;
+}
+.nav-toggle-label span:before,
+.nav-toggle-label span:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 28px;
+  height: 3px;
+  background: #222;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+.nav-toggle-label span:before {
+  top: -9px;
+}
+.nav-toggle-label span:after {
+  top: 9px;
+}
+@media (max-width: 991px) {
   .nav-toggle-label {
     display: block;
   }
