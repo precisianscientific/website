@@ -267,4 +267,4 @@ For business inquiries only, please contact us directly through the website.
 
 **Built with ❤️ for Precisian Scientific**
 
-*Last updated: January 2025* 
+*Last updated: July 2025* 
