@@ -209,6 +209,9 @@ section:nth-of-type(even) {
 }
 
 .service-logo {
+  width: auto;
+  max-width: 100%;
+  height: auto;
   max-height: 50px;
   margin-bottom: 1rem;
   object-fit: contain;
@@ -525,6 +528,7 @@ section:nth-of-type(even) {
   padding: 0.5rem 1rem;
   border-radius: 6px;
   transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
 }
 
 .navbar-links a:hover,
@@ -543,12 +547,28 @@ section:nth-of-type(even) {
   color: #fff !important;
   border: none;
   transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
 }
 
 .navbar-links .btn:hover {
   background: var(--primary-blue-dark);
   color: #fff !important;
   transform: translateY(-2px);
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .navbar-links {
+    gap: 0.5rem;
+  }
+  .navbar-links a {
+    padding: 0.5rem 0.5rem;
+    font-size: 0.85rem;
+  }
+  .navbar-links .btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+    margin-left: 0.25rem;
+  }
 }
 
 .nav-toggle {
@@ -776,4 +796,63 @@ section:nth-of-type(even) {
     max-width: 95vw;
     max-height: 65vh;
   }
+}
+
+/* Accessibility skip link */
+.skip-link {
+  position: absolute;
+  top: -60px;
+  left: 10px;
+  background: var(--primary-blue);
+  color: #fff !important;
+  padding: 8px 16px;
+  z-index: 10001;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 10px;
+}
+
+/* FAQ section hidden visually for SEO schema crawling */
+#faq {
+  display: none !important;
+}
+
+/* Process section timeline styling */
+.process-list {
+  list-style: none;
+  padding-left: 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.process-step {
+  position: relative;
+  padding-left: 3rem;
+  margin-bottom: 2rem;
+}
+
+.process-step:last-child {
+  margin-bottom: 0;
+}
+
+.process-step::before {
+  content: attr(data-step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2rem;
+  height: 2rem;
+  background: var(--primary-blue);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.9rem;
 }
