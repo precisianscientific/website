@@ -42,6 +42,14 @@ body {
   color: var(--on-background);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Global Responsive Image & Layout Protection */
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* Bootstrap Overrides */
@@ -89,6 +97,7 @@ body {
   height: auto;
   max-height: 72px;
   width: auto;
+  aspect-ratio: 800 / 157;
   display: block;
   object-fit: contain;
   transition: transform 0.2s ease;

@@ -38,22 +38,43 @@
   <link rel="manifest" href="./assets/favicon/site.webmanifest">
   <link rel="shortcut icon" href="./assets/favicon/favicon.ico">
 
-  <!-- Preconnect for fonts -->
+  <!-- Preconnect & DNS-Prefetch for External CDNs -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
   <!-- Preload hero background (LCP optimization) -->
   <link rel="preload" as="image" href="./assets/background.webp" type="image/webp" fetchpriority="high">
 
+  <!-- Asynchronous CSS Loading to Eliminate Render-Blocking -->
   <!-- Bootstrap 5 CSS -->
+  <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
   <!-- Font Awesome 6 -->
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer">
+    crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous" referrerpolicy="no-referrer">
+  </noscript>
+
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  </noscript>
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="./style.css">
@@ -277,7 +298,7 @@
         <a class="navbar-brand" href="index.html">
           <picture>
             <source srcset="./assets/logo.webp" type="image/webp">
-            <img src="./assets/logo.png" alt="Precisian Scientific Logo" class="logo" width="800" height="157">
+            <img src="./assets/logo.webp" alt="Precisian Scientific Logo" class="logo" width="800" height="157" decoding="async">
           </picture>
         </a>
         <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
@@ -350,7 +371,7 @@
               <div class="product-content p-3 text-center">
                 <picture>
                   <source srcset="./assets/fssai.webp" type="image/webp">
-                  <img src="./assets/fssai.png" alt="FSSAI Logo" class="service-logo" loading="lazy" width="304"
+                  <img src="./assets/fssai.webp" alt="FSSAI Logo" class="service-logo" loading="lazy" decoding="async" width="304"
                     height="166">
                 </picture>
                 <h3 class="h5 fw-medium mb-2">FSSAI Consulting</h3>
@@ -364,12 +385,12 @@
             <div class="product-card h-100">
               <picture>
                 <source srcset="./assets/grass.webp" type="image/webp">
-                <img src="./assets/grass.png" alt="" class="grass-overlay" loading="lazy" width="612" height="408">
+                <img src="./assets/grass.webp" alt="" class="grass-overlay" loading="lazy" decoding="async" width="612" height="408">
               </picture>
               <div class="product-content p-3 text-center">
                 <picture>
                   <source srcset="./assets/agmark.webp" type="image/webp">
-                  <img src="./assets/agmark.png" alt="AGMARK Logo" class="service-logo" loading="lazy" width="200"
+                  <img src="./assets/agmark.webp" alt="AGMARK Logo" class="service-logo" loading="lazy" decoding="async" width="200"
                     height="200">
                 </picture>
                 <h3 class="h5 fw-medium mb-2">AGMARK Certification</h3>
@@ -384,7 +405,7 @@
               <div class="product-content p-3 text-center">
                 <picture>
                   <source srcset="./assets/nabl.webp" type="image/webp">
-                  <img src="./assets/nabl.png" alt="NABL Logo" class="service-logo" loading="lazy" width="1153"
+                  <img src="./assets/nabl.webp" alt="NABL Logo" class="service-logo" loading="lazy" decoding="async" width="1153"
                     height="370">
                 </picture>
                 <h3 class="h5 fw-medium mb-2">NABL Accreditation</h3>
@@ -407,9 +428,9 @@
             <div class="product-card h-100 d-flex flex-column align-items-center justify-content-center">
               <picture>
                 <source srcset="./assets/microscope.webp" type="image/webp">
-                <img src="./assets/microscope.jpg"
+                <img src="./assets/microscope.webp"
                   alt="Research-grade microscope supplied by Precisian Scientific, West Bengal"
-                  class="img-fluid product-img-large mb-3" loading="lazy" width="800" height="800">
+                  class="img-fluid product-img-large mb-3" loading="lazy" decoding="async" width="800" height="800">
               </picture>
               <div class="product-content text-center">
                 <h3 class="h5 fw-medium mb-0">Microscope</h3>
@@ -420,8 +441,8 @@
             <div class="product-card h-100 d-flex flex-column align-items-center justify-content-center">
               <picture>
                 <source srcset="./assets/pipette.webp" type="image/webp">
-                <img src="./assets/pipette.jpg" alt="Precision micropipette for food testing and research laboratories"
-                  class="img-fluid product-img-large mb-3" loading="lazy" width="800" height="551">
+                <img src="./assets/pipette.webp" alt="Precision micropipette for food testing and research laboratories"
+                  class="img-fluid product-img-large mb-3" loading="lazy" decoding="async" width="800" height="551">
               </picture>
               <div class="product-content text-center">
                 <h3 class="h5 fw-medium mb-0">Pipette</h3>
@@ -432,9 +453,9 @@
             <div class="product-card h-100 d-flex flex-column align-items-center justify-content-center">
               <picture>
                 <source srcset="./assets/centrifuge.webp" type="image/webp">
-                <img src="./assets/centrifuge.jpg"
+                <img src="./assets/centrifuge.webp"
                   alt="High-speed laboratory centrifuge for pharmaceutical and chemical analysis"
-                  class="img-fluid product-img-large mb-3" loading="lazy" width="800" height="800">
+                  class="img-fluid product-img-large mb-3" loading="lazy" decoding="async" width="800" height="800">
               </picture>
               <div class="product-content text-center">
                 <h3 class="h5 fw-medium mb-0">Centrifuge</h3>
