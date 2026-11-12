@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="1200" height="420" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="fadeLeft" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="32%" stop-color="#ffffff" stop-opacity="0.18"/>
+      <stop offset="68%" stop-color="#ffffff" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="1"/>
+    </linearGradient>
+    <mask id="rightMask">
+      <rect width="1200" height="420" fill="url(#fadeLeft)"/>
+    </mask>
+    <pattern id="techGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" stroke="#38bdf8" stroke-width="0.6" stroke-opacity="0.18"/>
+      <circle cx="0" cy="0" r="1.2" fill="#38bdf8" fill-opacity="0.3"/>
+    </pattern>
+  </defs>
+
+  <g mask="url(#rightMask)">
+    <!-- Technical blueprint grid -->
+    <rect x="260" y="0" width="940" height="420" fill="url(#techGrid)" opacity="0.55"/>
+
+    <!-- Precision concentric calibration rings (right focal) -->
+    <g stroke="#38bdf8" stroke-opacity="0.18">
+      <circle cx="960" cy="210" r="165" stroke-width="1" stroke-dasharray="6 8"/>
+      <circle cx="960" cy="210" r="120" stroke-width="1.2"/>
+      <circle cx="960" cy="210" r="72" stroke-width="0.9" stroke-dasharray="3 5"/>
+      <line x1="770" y1="210" x2="1150" y2="210" stroke-width="0.7" stroke-opacity="0.14"/>
+      <line x1="960" y1="25" x2="960" y2="395" stroke-width="0.7" stroke-opacity="0.14"/>
+    </g>
+
+    <!-- Hexagonal molecular lattice chain -->
+    <g stroke="#34d399" stroke-width="1.35" stroke-opacity="0.22" stroke-linejoin="round">
+      <polygon points="730,115 765,95 800,115 800,155 765,175 730,155"/>
+      <polygon points="800,155 835,135 870,155 870,195 835,215 800,195"/>
+      <polygon points="800,75 835,55 870,75 870,115 835,135 800,115"/>
+      <line x1="730" y1="115" x2="690" y2="92"/>
+      <line x1="870" y1="195" x2="905" y2="215"/>
+      <circle cx="690" cy="92" r="4" fill="#34d399" fill-opacity="0.25"/>
+      <circle cx="765" cy="135" r="14" stroke-opacity="0.14"/>
+    </g>
+
+    <!-- SS316 gas manifold & orbital P&ID pipeline motif -->
+    <g stroke="#38bdf8" stroke-width="1.5" stroke-opacity="0.26" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Main dual gas lines -->
+      <path d="M560 285 H845 L880 250 H1085"/>
+      <path d="M620 335 H915 L945 305 H1145" stroke-opacity="0.18"/>
+      <!-- Vertical manifold riser & pressure drop -->
+      <path d="M775 285 V335"/>
+      <path d="M960 250 V165 H1065"/>
+      <!-- P&ID valve symbols & weld collars -->
+      <polygon points="810,277 826,285 810,293" fill="#38bdf8" fill-opacity="0.18"/>
+      <polygon points="842,277 826,285 842,293" fill="#38bdf8" fill-opacity="0.18"/>
+      <line x1="826" y1="285" x2="826" y2="269"/>
+      <line x1="818" y1="269" x2="834" y2="269"/>
+
+      <!-- Regulator pressure gauge node -->
+      <circle cx="1065" cy="165" r="22" fill="#061126" fill-opacity="0.4"/>
+      <circle cx="1065" cy="165" r="16" stroke-opacity="0.2"/>
+      <line x1="1065" y1="165" x2="1076" y2="154" stroke="#34d399" stroke-opacity="0.4"/>
+      <circle cx="1065" cy="165" r="3" fill="#38bdf8" fill-opacity="0.35"/>
+
+      <!-- Endpoint weld rings -->
+      <circle cx="1085" cy="250" r="5" fill="#34d399" fill-opacity="0.28"/>
+      <circle cx="1145" cy="305" r="4" fill="#38bdf8" fill-opacity="0.28"/>
+    </g>
+
+    <!-- Stylized Erlenmeyer analytical flask outline -->
+    <g stroke="#34d399" stroke-width="1.35" stroke-opacity="0.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M1085 65 H1115"/>
+      <path d="M1092 65 V95 L1068 142 C1064 149 1069 156 1077 156 H1123 C1131 156 1136 149 1132 142 L1108 95 V65"/>
+      <path d="M1076 132 Q1100 124 1124 132" stroke-opacity="0.18"/>
+    </g>
+  </g>
+</svg>

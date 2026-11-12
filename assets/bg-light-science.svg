@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" width="720" height="480" fill="none" aria-hidden="true">
+  <defs>
+    <radialGradient id="softFade" cx="78%" cy="28%" r="68%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="1"/>
+      <stop offset="65%" stop-color="#ffffff" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="cornerFade">
+      <rect width="720" height="480" fill="url(#softFade)"/>
+    </mask>
+  </defs>
+
+  <g mask="url(#cornerFade)">
+    <!-- Soft geometric optical rings -->
+    <g stroke="#0284c7" stroke-opacity="0.12">
+      <circle cx="575" cy="115" r="155" stroke-width="1" stroke-dasharray="5 7"/>
+      <circle cx="575" cy="115" r="108" stroke-width="1.2"/>
+      <circle cx="575" cy="115" r="56" stroke-width="0.9" stroke-opacity="0.15"/>
+    </g>
+
+    <!-- Molecular hexagonal honeycomb lattice -->
+    <g stroke="#059669" stroke-width="1.25" stroke-opacity="0.13" stroke-linejoin="round">
+      <polygon points="415,75 450,55 485,75 485,115 450,135 415,115"/>
+      <polygon points="485,115 520,95 555,115 555,155 520,175 485,155"/>
+      <polygon points="485,35 520,15 555,35 555,75 520,95 485,75"/>
+      <polygon points="555,75 590,55 625,75 625,115 590,135 555,115"/>
+      <circle cx="450" cy="95" r="13" stroke-opacity="0.1"/>
+      <circle cx="590" cy="95" r="13" stroke-opacity="0.1"/>
+    </g>
+
+    <!-- Precision reticle & volumetric pipetting axis -->
+    <g stroke="#0284c7" stroke-width="1.2" stroke-opacity="0.14" stroke-linecap="round">
+      <path d="M360 190 H505 L535 220 H690"/>
+      <circle cx="360" cy="190" r="4" fill="#0284c7" fill-opacity="0.14"/>
+      <circle cx="535" cy="220" r="6"/>
+      <line x1="640" y1="30" x2="640" y2="290" stroke-dasharray="3 6" stroke-opacity="0.09"/>
+      <line x1="420" y1="265" x2="700" y2="265" stroke-dasharray="3 6" stroke-opacity="0.09"/>
+    </g>
+  </g>
+</svg>

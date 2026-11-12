@@ -1,7 +1,7 @@
 {
-  "name": "Precisian Scientific",
-  "short_name": "PSIS",
-  "description": "Precisian Scientific — Precision instruments and compliance consulting",
+  "name": "Precisian Scientific Instrument Suppliers",
+  "short_name": "Precisian Scientific",
+  "description": "Quality, Testing & Assurance — Turnkey Laboratory Setup, SS316 Gas Manifolds, Precision Instruments & Quality Auditing across India",
   "start_url": "/",
   "lang": "en",
   "icons": [
@@ -18,7 +18,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#ffffff",
+  "theme_color": "#0b1f52",
   "background_color": "#ffffff",
   "display": "standalone"
 }
