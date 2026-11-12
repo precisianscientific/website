@@ -32,6 +32,16 @@
     let isWide = false;
     let hoverPinned = false;
     let hoverPreviewActive = false;
+    let lastInputKeyboard = false;
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Tab" || e.key === "Enter" || e.key === " " || e.key.startsWith("Arrow") || e.key === "Escape") {
+        lastInputKeyboard = true;
+      }
+    }, true);
+    document.addEventListener("pointerdown", () => {
+      lastInputKeyboard = false;
+    }, true);
 
     const syncSubmenuMode = (wide) => {
       if (!submenu || !dropdownTrigger) return;
@@ -150,6 +160,9 @@
         } else {
           hoverPinned = false;
           hoverPreviewActive = false;
+          if (!lastInputKeyboard && document.activeElement === dropdownTrigger) {
+            dropdownTrigger.blur();
+          }
         }
       });
 
