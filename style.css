@@ -328,9 +328,9 @@
   .site-logo {
     inline-size: auto;
     max-inline-size: clamp(10.5rem, 48dvw, 15.25rem);
-    max-block-size: 3.1rem;
+    max-block-size: 3.25rem;
     block-size: auto;
-    aspect-ratio: 848 / 189;
+    aspect-ratio: 840 / 300;
     object-fit: contain;
     border-radius: 6px;
   }
